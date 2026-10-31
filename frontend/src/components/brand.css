@@ -1,0 +1,82 @@
+.brand-announcement { min-height: 31px; display: flex; align-items: center; justify-content: center; gap: 9px; padding: 7px 20px; background: #1e4435; color: #e9eee3; font-size: 10px; line-height: 1.5; letter-spacing: .045em; }
+.brand-announcement > svg { flex: none; color: #b8caa5; }
+.brand-announcement-divider { height: 10px; width: 1px; background: #e7ecdf55; margin: 0 5px; }
+.brand-announcement-note { color: #c6d3c1; }
+.brand-header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid #1e443517; background: #f7f6eef5; backdrop-filter: blur(16px); }
+.brand-header-inner { min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+.brand-logo { display: inline-flex; align-items: center; gap: 11px; flex: none; color: #1e4435; text-decoration: none; }
+.brand-logo-mark { display: grid; place-items: center; width: 43px; height: 43px; border-radius: 50%; background: #1e4435; color: #f7f6ee; }
+.brand-logo-wordmark { font-size: 23px; line-height: 1; font-weight: 700; letter-spacing: .19em; }
+.brand-logo-wordmark small { display: block; margin-top: 8px; color: #75816e; font-size: 7px; line-height: 1; font-weight: 600; letter-spacing: .29em; }
+.brand-desktop-nav { display: flex; align-items: center; gap: 29px; }
+.brand-nav-link { display: inline-flex; position: relative; align-items: center; min-height: 44px; color: #5b6559; font-size: 12px; line-height: 1.4; font-weight: 500; text-decoration: none; }
+.brand-nav-link::after { content: ''; position: absolute; left: 50%; bottom: 3px; width: 4px; height: 4px; border-radius: 50%; background: #c98945; opacity: 0; transform: translateX(-50%); transition: opacity .2s ease; }
+.brand-nav-link:hover, .brand-nav-link.is-active { color: #1e4435; }
+.brand-nav-link.is-active { font-weight: 700; }
+.brand-nav-link.is-active::after { opacity: 1; }
+.brand-header-actions { display: flex; align-items: center; gap: 16px; }
+.brand-icon-button { display: grid; position: relative; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; background: transparent; color: #1e4435; border-radius: 5px; }
+.brand-icon-button:hover { background: #e7ecdf; }
+.brand-cart-count { display: grid; position: absolute; top: -1px; right: -1px; place-items: center; min-width: 17px; height: 17px; border: 2px solid #f7f6ee; border-radius: 50%; padding-inline: 3px; background: #c98945; color: #fff; font-size: 9px; line-height: 1; font-weight: 700; }
+.brand-shop-link { display: inline-flex; align-items: center; justify-content: center; gap: 15px; min-height: 42px; border: 1px solid #1e4435; border-radius: 5px; padding: 10px 17px; background: #1e4435; color: #f7f6ee; font-size: 11px; line-height: 1.4; font-weight: 600; text-decoration: none; }
+.brand-shop-link:hover { background: #305640; border-color: #305640; transform: translateY(-1px); }
+.brand-menu-toggle, .brand-mobile-nav { display: none; }
+.brand-footer { background: #183b2d; color: #e9eee3; }
+.brand-footer-grid { display: grid; grid-template-columns: 1.2fr .7fr .85fr 1.25fr; gap: 45px; padding-block: 67px 49px; }
+.brand-logo-light { color: #f7f6ee; }
+.brand-logo-light .brand-logo-mark { border: 1px solid #d3dfc64d; background: transparent; color: #c8d5b5; }
+.brand-logo-light .brand-logo-wordmark small { color: #c6d3c1; }
+.brand-footer-about > p { margin-top: 23px; color: #b8c8b7; font-size: 12px; line-height: 1.9; }
+.brand-footer-location { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; color: #bdcda9; font-size: 10px; }
+.brand-footer .brand-footer-label { display: block; margin: 5px 0 0; color: #c2d0b9; font-family: inherit; font-size: 9px; line-height: 1.6; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+.brand-footer-links { display: grid; gap: 13px; margin-top: 23px; }
+.brand-footer-links > a { width: fit-content; color: #e3e8dd; font-size: 12px; line-height: 1.6; text-decoration: none; }
+.brand-footer-links > a:hover { color: #e7b578; transform: translateX(2px); }
+.brand-footer-newsletter > h2 { margin-top: 12px; color: #f7f6ee; font-family: 'DM Serif Display', Georgia, serif; font-size: 26px; line-height: 1.25; font-weight: 400; letter-spacing: -.02em; }
+.brand-footer-newsletter > p { margin-top: 13px; color: #b8c8b7; font-size: 11px; line-height: 1.8; }
+.brand-newsletter-form { display: flex; align-items: center; gap: 8px; margin-top: 18px; border-bottom: 1px solid #becdb65e; }
+.brand-newsletter-form:focus-within { border-color: #e7b578; }
+.brand-newsletter-form input { min-width: 0; flex: 1; width: 100%; min-height: 44px; padding: 9px 0; border: 0; outline-offset: 3px; background: transparent; color: #f7f6ee; font-size: 12px; }
+.brand-newsletter-form input::placeholder { color: #becdb6; opacity: .9; }
+.brand-newsletter-form button { display: grid; flex: none; place-items: center; width: 44px; height: 44px; border: 0; border-radius: 4px; background: transparent; color: #e7b578; }
+.brand-newsletter-form button:hover { background: #ffffff0d; }
+.brand-footer-newsletter > .brand-newsletter-status { min-height: 30px; margin-top: 9px; color: #b6c5ae; font-size: 9px; line-height: 1.6; }
+.brand-footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 63px; padding-block: 18px; border-top: 1px solid #e7ecdf21; color: #acbda7; font-size: 9px; line-height: 1.7; }
+.brand-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+@media (max-width: 1060px) {
+  .brand-header-inner { gap: 20px; }
+  .brand-desktop-nav { gap: 20px; }
+  .brand-header-actions { gap: 10px; }
+  .brand-shop-link { padding-inline: 12px; gap: 9px; }
+  .brand-footer-grid { gap: 30px; }
+}
+@media (max-width: 920px) {
+  .brand-desktop-nav { display: none; }
+  .brand-menu-toggle { display: grid; }
+  .brand-header-inner { min-height: 76px; }
+  .brand-mobile-nav { display: block; max-height: calc(100dvh - 107px); overflow-y: auto; border-top: 1px solid #1e443517; padding-block: 9px 18px; background: #f7f6ee; }
+  .brand-mobile-link { display: flex; align-items: center; justify-content: space-between; min-height: 49px; padding: 13px 10px; border-bottom: 1px solid #1e443514; color: #1e4435; font-size: 14px; text-decoration: none; }
+  .brand-mobile-link.is-active { font-weight: 700; color: #7c592e; }
+  .brand-mobile-link:hover { background: #e7ecdf; }
+  .brand-footer-grid { grid-template-columns: 1.1fr .7fr .9fr; gap: 38px 30px; padding-block: 52px 35px; }
+  .brand-footer-newsletter { grid-column: 1 / -1; max-width: 470px; }
+}
+@media (max-width: 560px) {
+  .brand-announcement { min-height: 29px; font-size: 9px; padding-inline: 12px; gap: 6px; letter-spacing: .01em; }
+  .brand-announcement-divider, .brand-announcement-note { display: none; }
+  .brand-header-inner { min-height: 72px; gap: 12px; }
+  .brand-header-actions { gap: 2px; }
+  .brand-shop-link { display: none; }
+  .brand-logo { gap: 9px; }
+  .brand-logo-mark { width: 37px; height: 37px; }
+  .brand-logo-mark svg { width: 21px; height: 21px; }
+  .brand-logo-wordmark { font-size: 21px; }
+  .brand-logo-wordmark small { margin-top: 6px; font-size: 6px; }
+  .brand-mobile-nav { max-height: calc(100dvh - 101px); }
+  .brand-footer-grid { grid-template-columns: 1fr 1fr; gap: 34px 20px; padding-block: 43px 27px; }
+  .brand-footer-about { grid-column: 1 / -1; }
+  .brand-footer-about > p { margin-top: 17px; }
+  .brand-footer-location { margin-top: 12px; }
+  .brand-footer-links { gap: 10px; margin-top: 16px; }
+  .brand-footer-bottom { align-items: flex-start; flex-direction: column; gap: 5px; padding-block: 19px; }
+}
