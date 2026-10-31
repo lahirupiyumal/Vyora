@@ -82,7 +82,7 @@ export default function Home() {
             <button className="home-button home-button-cream" type="button" onClick={() => addItem(primaryProduct, quantity)}><ShoppingBag size={17}/> Add to demo basket <ArrowRight size={17}/></button>
             <p className="home-prototype-note">A product in development. No real orders or payments.</p>
           </div>
-          <Link className="home-text-link home-light-link" to="/shop">Explore full product details <ArrowRight size={16}/></Link>
+          <Link className="home-text-link home-light-link" to={`/shop/${encodeURIComponent(primaryProduct.id)}`}>Explore full product details <ArrowRight size={16}/></Link>
         </div>
         <div className="home-original-visual">
           <div className="home-original-image"><img src={primaryProduct.image} alt="VYORA Natural Vegetable Soup Mix concept pack with a bowl of vegetable soup" width="1672" height="941" loading="lazy"/><span className="home-original-tag"><Leaf size={14}/> THE VYORA ORIGINAL</span></div>

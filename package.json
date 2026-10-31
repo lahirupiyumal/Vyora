@@ -1,0 +1,12 @@
+{
+  "name": "vyora",
+  "private": true,
+  "version": "0.0.0",
+  "description": "VYORA natural foods prototype website",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev --",
+    "build": "npm --prefix frontend run build --",
+    "preview": "npm --prefix frontend run preview --",
+    "lint": "npm --prefix frontend run lint --"
+  }
+}
