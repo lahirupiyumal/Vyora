@@ -1,0 +1,2 @@
+import { Link } from 'react-router-dom'
+export default function Legal({title}){return <section className="section-space"><div className="site-container max-w-3xl"><span className="eyebrow">PROTOTYPE INFORMATION</span><h1 className="mt-5 text-5xl font-bold">{title}</h1><p className="mt-6 leading-8 text-[#6B756C]">This is a placeholder page for the VYORA university entrepreneurship prototype. Formal legal content will need to be prepared and reviewed before commercial launch.</p><Link className="btn-primary mt-7" to="/">Return home</Link></div></section>}
