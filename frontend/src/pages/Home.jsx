@@ -1,4 +1,4 @@
-import { ArrowRight, Check, CookingPot, Heart, Leaf, Minus, Plus, ShoppingBag, Soup, Sprout } from 'lucide-react'
+import { ArrowRight, Check, CookingPot, Heart, Leaf, Minus, Pause, Play, Plus, ShoppingBag, Soup, Sprout } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
@@ -23,6 +23,7 @@ const preparation = [
 export default function Home() {
   const { addItem } = useCart()
   const [quantity, setQuantity] = useState(1)
+  const [motionPaused, setMotionPaused] = useState(false)
   const [selectedProductId, setSelectedProductId] = useState(primaryProduct.id)
   const selectedProduct = products.find(product => product.id === selectedProductId) || primaryProduct
 
@@ -32,7 +33,7 @@ export default function Home() {
   }
 
   return <div className="home-page">
-    <section className="home-hero" aria-labelledby="home-title">
+    <section className={`home-hero${motionPaused ? ' is-motion-paused' : ''}`} aria-labelledby="home-title">
       <div className="site-container home-hero-shell">
         <div className="home-hero-content">
           <span className="home-hero-eyebrow"><span aria-hidden="true"/> WELCOME TO VYORA</span>
@@ -45,7 +46,13 @@ export default function Home() {
         </div>
         <figure className="home-hero-food">
           <img src={floatingSoupImage} alt="Vegetable soup cubes, fresh carrots, pumpkin, tomato and herbs floating above a warm bowl of soup" width="995" height="1200" fetchPriority="high" decoding="async"/>
-          <figcaption>THE VYORA SOUP CUBE CONCEPT</figcaption>
+          <figcaption>
+            <span>THE VYORA SOUP CUBE CONCEPT</span>
+            <button type="button" className="home-hero-motion-toggle" onClick={() => setMotionPaused(paused => !paused)} aria-label={motionPaused ? 'Resume floating animation' : 'Pause floating animation'}>
+              {motionPaused ? <Play size={11} aria-hidden="true"/> : <Pause size={11} aria-hidden="true"/>}
+              <span>{motionPaused ? 'Resume motion' : 'Pause motion'}</span>
+            </button>
+          </figcaption>
         </figure>
       </div>
     </section>
