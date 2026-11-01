@@ -42,19 +42,11 @@ export default function Home() {
             <Link className="home-hero-shop" to="/shop">Explore our cubes <ArrowRight size={16} aria-hidden="true"/></Link>
             <Link className="home-hero-secondary" to="/ingredients">Our ingredients</Link>
           </div>
-          <div className="home-hero-origin"><span>SMALL MOMENTS. SIMPLE GOODNESS.</span><p>A new pantry idea, rooted in familiar comfort.</p></div>
-          <dl className="home-hero-facts">
-            <div><dt>Pack sizes</dt><dd>{String(products.length).padStart(2, '0')}<small>Original · Large · Mini</small></dd></div>
-            <div><dt>Simple idea</dt><dd>01<small>Comfort in a cube</small></dd></div>
-            <div><dt>Our inspiration</dt><dd>Sri Lanka<small>From our home to yours</small></dd></div>
-          </dl>
         </div>
         <figure className="home-hero-food">
-          <div className="home-hero-seal"><span><Sprout size={22} strokeWidth={1.5} aria-hidden="true"/></span><div>Vegetables at heart.<small>Everyday life in mind.</small></div></div>
           <img src={floatingSoupImage} alt="Vegetable soup cubes, fresh carrots, pumpkin, tomato and herbs floating above a warm bowl of soup" width="995" height="1200" fetchPriority="high" decoding="async"/>
           <figcaption>THE VYORA SOUP CUBE CONCEPT</figcaption>
         </figure>
-        <nav className="home-hero-rail" aria-label="Discover VYORA"><Link to="/our-story">OUR STORY</Link><span aria-hidden="true"/><Link to="/contact">GET IN TOUCH</Link></nav>
       </div>
     </section>
     <section className="home-principles" aria-label="The VYORA approach">

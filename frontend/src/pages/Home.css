@@ -20,24 +20,9 @@
 .home-hero-shop:hover { background: #315b3f; transform: translateY(-2px); box-shadow: 0 8px 18px #1e44351a; }
 .home-hero-secondary { border-color: #a8b995; background: transparent; color: #2e4a32; }
 .home-hero-secondary:hover { border-color: #557447; background: #ffffff70; }
-.home-hero-origin { margin-top: 59px; }
-.home-hero-origin > span { color: #556747; font-size: 8px; letter-spacing: .12em; }
-.home-hero-origin p { margin-top: 7px; color: #485b3a; font-size: 11px; line-height: 1.6; }
-.home-hero-facts { display: grid; grid-template-columns: .9fr .9fr 1.2fr; gap: 18px; max-width: 415px; margin-top: 30px; }
-.home-hero-facts > div { display: flex; flex-direction: column; min-width: 0; }
-.home-hero-facts dt { order: 1; margin-top: 7px; color: #536447; font-size: 9px; line-height: 1.5; }
-.home-hero-facts dd { margin: 0; color: #24442b; font-family: 'DM Serif Display', Georgia, serif; font-size: 29px; line-height: 1.15; letter-spacing: -.025em; }
-.home-hero-facts small { display: block; margin-top: 4px; color: #6d7d5e; font-family: 'DM Sans', sans-serif; font-size: 8px; line-height: 1.5; letter-spacing: 0; }
 .home-hero-food { position: relative; z-index: 1; display: grid; align-items: end; min-width: 0; height: 610px; margin: 0; }
 .home-hero-food > img { position: relative; z-index: 1; display: block; width: 118%; max-width: none; height: 565px; margin-left: -25px; object-fit: contain; filter: drop-shadow(0 16px 18px #3f502424); }
-.home-hero-seal { position: absolute; z-index: 2; top: 0; right: 10px; display: flex; align-items: center; gap: 10px; color: #284932; font-size: 11px; line-height: 1.5; }
-.home-hero-seal > span { display: grid; width: 42px; height: 42px; flex: none; place-items: center; border: 1px solid #b0c292; border-radius: 50%; background: #fbfff1a3; }
-.home-hero-seal small { display: block; color: #657754; font-size: 9px; }
 .home-hero-food figcaption { position: relative; z-index: 2; margin-top: 7px; color: #688050; font-size: 7px; letter-spacing: .14em; text-align: center; }
-.home-hero-rail { position: absolute; top: 50%; right: 18px; display: flex; align-items: center; gap: 20px; writing-mode: vertical-rl; transform: translateY(-50%); }
-.home-hero-rail a { min-height: 44px; padding: 6px; color: #596d49; font-size: 8px; letter-spacing: .12em; text-decoration: none; }
-.home-hero-rail a:hover { color: #1e4435; }
-.home-hero-rail > span { height: 32px; width: 1px; background: #b9c99f; }
 .home-button { display: inline-flex; min-height: 49px; align-items: center; justify-content: center; gap: 22px; border: 1px solid transparent; border-radius: 5px; background: var(--home-forest); padding: 13px 22px; color: white; font-size: 12px; font-weight: 600; text-decoration: none; }
 .home-button:hover { background: #315840; transform: translateY(-2px); box-shadow: 0 6px 16px #1e443514; }
 .home-button svg { flex-shrink: 0; }
@@ -148,9 +133,6 @@
   .home-hero-content h1 { font-size: clamp(2.8rem, 5.6vw, 3.8rem); }
   .home-hero-food { height: 560px; }
   .home-hero-food > img { height: 510px; width: 118%; margin-left: -22px; }
-  .home-hero-seal { right: 0; }
-  .home-hero-rail { display: none; }
-  .home-hero-origin { margin-top: 40px; }
   .home-principle { padding-inline: 15px; gap: 12px; }
   .home-principle p { font-size: 9px; }
   .home-ingredients-grid, .home-original-grid, .home-faq-grid { gap: 50px; }
@@ -167,10 +149,6 @@
   .home-hero-shop, .home-hero-secondary { padding-inline: 15px; font-size: 10px; }
   .home-hero-food { height: 510px; }
   .home-hero-food > img { height: 440px; margin-left: -8px; }
-  .home-hero-seal { top: 12px; right: -5px; font-size: 10px; }
-  .home-hero-facts { gap: 10px; }
-  .home-hero-facts dd { font-size: 24px; }
-  .home-hero-facts small { font-size: 7px; }
   .home-button { padding-inline: 17px; font-size: 11px; }
   .home-principles-grid { padding-block: 20px; }
   .home-principle { flex-direction: column; gap: 9px; text-align: center; }
@@ -199,15 +177,8 @@
   .home-hero-content h1 { margin: 20px 0 0; font-size: clamp(2.65rem, 10.6vw, 4.2rem); }
   .home-hero-description { max-width: 420px; margin-top: 18px; font-size: 12px; }
   .home-hero-actions { margin-top: 22px; }
-  .home-hero-origin { margin-top: 28px; }
-  .home-hero-origin p { font-size: 10px; }
-  .home-hero-facts { max-width: 400px; margin-top: 22px; }
-  .home-hero-facts dd { font-size: 25px; }
-  .home-hero-facts small { font-size: 7px; }
-  .home-hero-facts dt { font-size: 8px; }
-  .home-hero-food { height: auto; padding-top: 56px; }
+  .home-hero-food { height: auto; }
   .home-hero-food > img { width: 100%; max-width: 430px; height: auto; margin-inline: auto; }
-  .home-hero-seal { top: 0; right: 0; }
   .home-hero-food figcaption { margin-top: 12px; font-size: 6px; }
   .home-button { min-height: 47px; font-size: 11px; }
   .home-principles-grid { grid-template-columns: 1fr; padding-block: 5px; }

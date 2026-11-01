@@ -1,4 +1,4 @@
-import { ArrowUpRight, Leaf, Menu, ShoppingBag, X } from 'lucide-react'
+import { ArrowUpRight, Menu, ShoppingBag, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
@@ -30,12 +30,6 @@ export default function Header() {
   }
 
   return <>
-    <div className="brand-announcement">
-      <Leaf size={12} aria-hidden="true" />
-      <span>A little closer to nature. A little simpler every day.</span>
-      <span className="brand-announcement-divider" aria-hidden="true" />
-      <span className="brand-announcement-note">A product concept in development</span>
-    </div>
     <header className="brand-header">
       <div className="site-container brand-header-inner">
         <Logo onClick={() => setOpen(false)} />

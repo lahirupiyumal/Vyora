@@ -1,7 +1,3 @@
-.brand-announcement { min-height: 31px; display: flex; align-items: center; justify-content: center; gap: 9px; padding: 7px 20px; background: #1e4435; color: #e9eee3; font-size: 10px; line-height: 1.5; letter-spacing: .045em; }
-.brand-announcement > svg { flex: none; color: #b8caa5; }
-.brand-announcement-divider { height: 10px; width: 1px; background: #e7ecdf55; margin: 0 5px; }
-.brand-announcement-note { color: #c6d3c1; }
 .brand-header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid #1e443517; background: #f7f6eef5; backdrop-filter: blur(16px); }
 .brand-header-inner { min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
 .brand-logo { display: inline-flex; align-items: center; flex: none; border-radius: 50%; color: #1e4435; text-decoration: none; }
@@ -54,7 +50,7 @@
   .brand-menu-toggle { display: grid; }
   .brand-header-inner { min-height: 76px; }
   .brand-header .brand-logo-image { width: 60px; height: 60px; }
-  .brand-mobile-nav { display: block; max-height: calc(100dvh - 107px); overflow-y: auto; border-top: 1px solid #1e443517; padding-block: 9px 18px; background: #f7f6ee; }
+  .brand-mobile-nav { display: block; max-height: calc(100dvh - 76px); overflow-y: auto; border-top: 1px solid #1e443517; padding-block: 9px 18px; background: #f7f6ee; }
   .brand-mobile-link { display: flex; align-items: center; justify-content: space-between; min-height: 49px; padding: 13px 10px; border-bottom: 1px solid #1e443514; color: #1e4435; font-size: 14px; text-decoration: none; }
   .brand-mobile-link.is-active { font-weight: 700; color: #7c592e; }
   .brand-mobile-link:hover { background: #e7ecdf; }
@@ -62,14 +58,12 @@
   .brand-footer-newsletter { grid-column: 1 / -1; max-width: 470px; }
 }
 @media (max-width: 560px) {
-  .brand-announcement { min-height: 29px; font-size: 9px; padding-inline: 12px; gap: 6px; letter-spacing: .01em; }
-  .brand-announcement-divider, .brand-announcement-note { display: none; }
   .brand-header-inner { min-height: 72px; gap: 12px; }
   .brand-header-actions { gap: 2px; }
   .brand-shop-link { display: none; }
   .brand-header .brand-logo-image { width: 56px; height: 56px; }
   .brand-footer .brand-logo-image { width: 104px; height: 104px; }
-  .brand-mobile-nav { max-height: calc(100dvh - 101px); }
+  .brand-mobile-nav { max-height: calc(100dvh - 72px); }
   .brand-footer-grid { grid-template-columns: 1fr 1fr; gap: 34px 20px; padding-block: 43px 27px; }
   .brand-footer-about { grid-column: 1 / -1; }
   .brand-footer-about > p { margin-top: 17px; }
