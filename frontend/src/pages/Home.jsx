@@ -1,51 +1,61 @@
-import { ArrowDown, ArrowRight, Check, CookingPot, Heart, Leaf, Minus, Plus, ShoppingBag, Soup, Sprout } from 'lucide-react'
+import { ArrowRight, Check, CookingPot, Heart, Leaf, Minus, Plus, ShoppingBag, Soup, Sprout } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { faqs } from '../data/faqs'
-import { primaryProduct } from '../data/products'
+import { primaryProduct, products } from '../data/products'
 import harvestImage from '../assets/vegetable-harvest.jpg'
+import floatingSoupImage from '../assets/vyora-floating-soup.png'
 import './Home.css'
 
 const principles = [
-  { icon: Sprout, title: 'Vegetables at heart', copy: 'Inspired by familiar, real ingredients.' },
-  { icon: Soup, title: 'Comfort, made convenient', copy: 'A thoughtful idea for your daily routine.' },
-  { icon: Heart, title: 'Rooted in Sri Lanka', copy: 'Local inspiration. Everyday possibilities.' },
+  { icon: Sprout, title: 'Vegetable-led', copy: 'A concept shaped around familiar ingredients.' },
+  { icon: Soup, title: 'Made for real life', copy: 'One simple cube for busy everyday moments.' },
+  { icon: Heart, title: 'Rooted in Sri Lanka', copy: 'Local inspiration with everyday possibilities.' },
 ]
 
 const preparation = [
-  { icon: Soup, title: 'A spoonful of possibility', copy: 'Measure the mix and add water, following the final preparation guide.' },
-  { icon: CookingPot, title: 'A moment to slow down', copy: 'Stir and cook. A simple little ritual for the busiest part of your day.' },
-  { icon: Heart, title: 'A bowl to come back to', copy: 'Serve warm, take a seat and make a little room for yourself.' },
+  { icon: Soup, title: 'Start with one cube', copy: 'A neatly portioned beginning designed to make preparation feel effortless.' },
+  { icon: CookingPot, title: 'Stir into your pot', copy: 'Add to simmering water and follow the final preparation guide.' },
+  { icon: Heart, title: 'Serve something warm', copy: 'Pour, pause and enjoy a comforting bowl made for everyday life.' },
 ]
 
 export default function Home() {
   const { addItem } = useCart()
   const [quantity, setQuantity] = useState(1)
+  const [selectedProductId, setSelectedProductId] = useState(primaryProduct.id)
+  const selectedProduct = products.find(product => product.id === selectedProductId) || primaryProduct
+
+  const selectProduct = productId => {
+    setSelectedProductId(productId)
+    setQuantity(1)
+  }
 
   return <div className="home-page">
     <section className="home-hero" aria-labelledby="home-title">
-      <div className="site-container home-hero-grid">
-        <div className="home-hero-copy">
-          <span className="home-kicker"><span className="home-kicker-line"/> A LITTLE CLOSER TO NATURE</span>
-          <h1 id="home-title">Goodness,<br/><em>in every bowl.</em></h1>
-          <p>A little comfort. A little care. Meet VYORA — a vegetable soup mix concept inspired by Sri Lankan kitchens and the rhythm of everyday life.</p>
-          <div className="home-actions">
-            <a className="home-button" href="#the-original">Discover VYORA <ArrowRight size={17}/></a>
-            <Link className="home-text-link" to="/our-story">Our story <ArrowRight size={16}/></Link>
+      <div className="site-container home-hero-shell">
+        <div className="home-hero-content">
+          <span className="home-hero-eyebrow"><span aria-hidden="true"/> WELCOME TO VYORA</span>
+          <h1 id="home-title">A little cube.<br/><em>A lot of comfort.</em></h1>
+          <p className="home-hero-description">Familiar vegetables. Fragrant herbs. A comforting soup cube concept inspired by Sri Lankan kitchens and made for the way you live.</p>
+          <div className="home-hero-actions">
+            <Link className="home-hero-shop" to="/shop">Explore our cubes <ArrowRight size={16} aria-hidden="true"/></Link>
+            <Link className="home-hero-secondary" to="/ingredients">Our ingredients</Link>
           </div>
-          <div className="home-hero-notes"><span><Leaf size={15}/> Vegetable-based concept</span><span className="home-note-dot"/><span>Thoughtfully developed</span></div>
-          <a className="home-scroll-link" href="#the-vyora-way"><span><ArrowDown size={15}/></span> A GOOD IDEA, FROM THE GROUND UP</a>
+          <div className="home-hero-origin"><span>SMALL MOMENTS. SIMPLE GOODNESS.</span><p>A new pantry idea, rooted in familiar comfort.</p></div>
+          <dl className="home-hero-facts">
+            <div><dt>Pack sizes</dt><dd>{String(products.length).padStart(2, '0')}<small>Original · Large · Mini</small></dd></div>
+            <div><dt>Simple idea</dt><dd>01<small>Comfort in a cube</small></dd></div>
+            <div><dt>Our inspiration</dt><dd>Sri Lanka<small>From our home to yours</small></dd></div>
+          </dl>
         </div>
-        <div className="home-visual">
-          <div className="home-visual-label"><span>THE EVERYDAY ORIGINAL</span><span>01 / VYORA</span></div>
-          <div className="home-visual-frame">
-            <img src={primaryProduct.image} alt="VYORA Natural Vegetable Soup Cube banner with boxed product, vegetable cubes and fresh vegetables" width="1942" height="809" fetchPriority="high"/>
-            <span className="home-image-caption">Packaging concept</span>
-          </div>
-          <div className="home-product-note"><span className="home-note-icon"><Leaf size={25} strokeWidth={1.5}/></span><div><small>SMALL MOMENTS. SIMPLE GOODNESS.</small><strong>Your everyday, a little warmer.</strong></div></div>
-          <div className="home-visual-foot"><span>INSPIRED BY NATURE. CREATED WITH CARE.</span><span className="home-visual-dots" aria-hidden="true"><i/><i/><i/></span></div>
-        </div>
+        <figure className="home-hero-food">
+          <div className="home-hero-food-glow" aria-hidden="true"/>
+          <div className="home-hero-seal"><span><Sprout size={22} strokeWidth={1.5} aria-hidden="true"/></span><div>Vegetables at heart.<small>Everyday life in mind.</small></div></div>
+          <img src={floatingSoupImage} alt="Vegetable soup cubes, fresh carrots, pumpkin, tomato and herbs floating above a warm bowl of soup" width="995" height="1200" fetchPriority="high" decoding="async"/>
+          <figcaption>THE VYORA SOUP CUBE CONCEPT</figcaption>
+        </figure>
+        <nav className="home-hero-rail" aria-label="Discover VYORA"><Link to="/our-story">OUR STORY</Link><span aria-hidden="true"/><Link to="/contact">GET IN TOUCH</Link></nav>
       </div>
     </section>
     <section className="home-principles" aria-label="The VYORA approach">
@@ -72,21 +82,26 @@ export default function Home() {
     <section className="home-original" id="the-original" aria-labelledby="original-title">
       <div className="site-container home-original-grid">
         <div className="home-original-copy">
-          <span className="home-kicker home-kicker-light"><span className="home-kicker-line"/> MEET OUR FIRST CONCEPT</span>
-          <h2 id="original-title">Your new pantry idea.<br/><em>A familiar kind of comfort.</em></h2>
-          <p>A vegetable soup mix, thoughtfully reimagined for study breaks, busy workdays and quiet evenings at home.</p>
-          <ul className="home-product-features"><li><Check size={16}/> Vegetables, herbs and spices under consideration</li><li><Check size={16}/> Designed to simplify everyday preparation</li><li><Check size={16}/> Inspired by the way Sri Lanka eats</li></ul>
+          <span className="home-kicker home-kicker-light"><span className="home-kicker-line"/> FIND YOUR EVERYDAY SIZE</span>
+          <h2 id="original-title">Three sizes.<br/><em>One comforting idea.</em></h2>
+          <p>From a first taste to a family pantry pack, choose the VYORA size that fits the way you live.</p>
+          <ul className="home-product-features"><li><Check size={16}/> Original, Large and Mini concepts</li><li><Check size={16}/> Designed to simplify everyday preparation</li><li><Check size={16}/> Inspired by Sri Lankan ingredients and routines</li></ul>
+          <div className="home-variant-options" role="group" aria-label="Choose a VYORA pack size">
+            {products.map(product => <button key={product.id} type="button" className={`home-variant-option${selectedProduct.id === product.id ? ' is-active' : ''}`} onClick={() => selectProduct(product.id)} aria-pressed={selectedProduct.id === product.id}>
+              <strong>{product.variant}</strong><span>{product.weight.replace(' prototype pack', '')}</span>
+            </button>)}
+          </div>
           <div className="home-buy-panel">
-            <div className="home-product-heading"><h3>Natural Vegetable Soup Mix</h3><span>100 g concept pack</span></div>
-            <div className="home-purchase-row"><div className="home-product-price"><strong><span>LKR</span> {primaryProduct.price.toLocaleString()}</strong><small>Illustrative prototype price</small></div><div className="home-quantity" role="group" aria-label="Product quantity"><button type="button" aria-label="Decrease quantity" disabled={quantity === 1} onClick={() => setQuantity(value => Math.max(1, value - 1))}><Minus size={15}/></button><output aria-label="Quantity" aria-live="polite">{quantity}</output><button type="button" aria-label="Increase quantity" onClick={() => setQuantity(value => value + 1)}><Plus size={15}/></button></div></div>
-            <button className="home-button home-button-cream" type="button" onClick={() => addItem(primaryProduct, quantity)}><ShoppingBag size={17}/> Add to demo basket <ArrowRight size={17}/></button>
+            <div className="home-product-heading"><h3>{selectedProduct.shortName}</h3><span>{selectedProduct.weight}</span></div>
+            <div className="home-purchase-row"><div className="home-product-price"><strong><span>LKR</span> {selectedProduct.price.toLocaleString()}</strong><small>Illustrative prototype price</small></div><div className="home-quantity" role="group" aria-label="Product quantity"><button type="button" aria-label="Decrease quantity" disabled={quantity === 1} onClick={() => setQuantity(value => Math.max(1, value - 1))}><Minus size={15}/></button><output aria-label="Quantity" aria-live="polite">{quantity}</output><button type="button" aria-label="Increase quantity" onClick={() => setQuantity(value => value + 1)}><Plus size={15}/></button></div></div>
+            <button className="home-button home-button-cream" type="button" onClick={() => addItem(selectedProduct, quantity)}><ShoppingBag size={17}/> Add to demo basket <ArrowRight size={17}/></button>
             <p className="home-prototype-note">A product in development. No real orders or payments.</p>
           </div>
-          <Link className="home-text-link home-light-link" to={`/shop/${encodeURIComponent(primaryProduct.id)}`}>Explore full product details <ArrowRight size={16}/></Link>
+          <Link className="home-text-link home-light-link" to={`/shop/${encodeURIComponent(selectedProduct.id)}`}>Explore {selectedProduct.variant.toLowerCase()} pack details <ArrowRight size={16}/></Link>
         </div>
         <div className="home-original-visual">
-          <div className="home-original-image"><img src={primaryProduct.image} alt="VYORA Natural Vegetable Soup Cube promotional banner" width="1942" height="809" loading="lazy"/><span className="home-original-tag"><Leaf size={14}/> THE VYORA ORIGINAL</span></div>
-          <div className="home-original-caption"><span>FROM OUR IDEA TO YOUR EVERYDAY.</span><span>VYORA / 01</span></div>
+          <div className="home-original-image"><img src={selectedProduct.image} alt="VYORA Natural Vegetable Soup Cube promotional banner" width="1942" height="809" loading="lazy"/><span className="home-original-tag"><Leaf size={14}/> THE VYORA {selectedProduct.variant.toUpperCase()}</span></div>
+          <div className="home-original-caption"><span>CHOOSE YOUR EVERYDAY SIZE.</span><span>VYORA / {selectedProduct.variant.toUpperCase()}</span></div>
         </div>
       </div>
     </section>
