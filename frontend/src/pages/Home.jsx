@@ -40,7 +40,7 @@ export default function Home() {
         <div className="home-visual">
           <div className="home-visual-label"><span>THE EVERYDAY ORIGINAL</span><span>01 / VYORA</span></div>
           <div className="home-visual-frame">
-            <img src={primaryProduct.image} alt="VYORA vegetable soup mix packaging concept beside a warm bowl of soup, pumpkin and fresh vegetables" width="1672" height="941" fetchPriority="high"/>
+            <img src={primaryProduct.image} alt="VYORA Natural Vegetable Soup Cube banner with boxed product, vegetable cubes and fresh vegetables" width="1942" height="809" fetchPriority="high"/>
             <span className="home-image-caption">Packaging concept</span>
           </div>
           <div className="home-product-note"><span className="home-note-icon"><Leaf size={25} strokeWidth={1.5}/></span><div><small>SMALL MOMENTS. SIMPLE GOODNESS.</small><strong>Your everyday, a little warmer.</strong></div></div>
@@ -85,7 +85,7 @@ export default function Home() {
           <Link className="home-text-link home-light-link" to={`/shop/${encodeURIComponent(primaryProduct.id)}`}>Explore full product details <ArrowRight size={16}/></Link>
         </div>
         <div className="home-original-visual">
-          <div className="home-original-image"><img src={primaryProduct.image} alt="VYORA Natural Vegetable Soup Mix concept pack with a bowl of vegetable soup" width="1672" height="941" loading="lazy"/><span className="home-original-tag"><Leaf size={14}/> THE VYORA ORIGINAL</span></div>
+          <div className="home-original-image"><img src={primaryProduct.image} alt="VYORA Natural Vegetable Soup Cube promotional banner" width="1942" height="809" loading="lazy"/><span className="home-original-tag"><Leaf size={14}/> THE VYORA ORIGINAL</span></div>
           <div className="home-original-caption"><span>FROM OUR IDEA TO YOUR EVERYDAY.</span><span>VYORA / 01</span></div>
         </div>
       </div>
