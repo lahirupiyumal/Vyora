@@ -50,7 +50,6 @@ export default function Home() {
           </dl>
         </div>
         <figure className="home-hero-food">
-          <div className="home-hero-food-glow" aria-hidden="true"/>
           <div className="home-hero-seal"><span><Sprout size={22} strokeWidth={1.5} aria-hidden="true"/></span><div>Vegetables at heart.<small>Everyday life in mind.</small></div></div>
           <img src={floatingSoupImage} alt="Vegetable soup cubes, fresh carrots, pumpkin, tomato and herbs floating above a warm bowl of soup" width="995" height="1200" fetchPriority="high" decoding="async"/>
           <figcaption>THE VYORA SOUP CUBE CONCEPT</figcaption>

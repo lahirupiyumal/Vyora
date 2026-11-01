@@ -7,7 +7,7 @@
 .home-kicker { display: inline-flex; align-items: center; gap: 12px; color: #55614d; font-size: 10px; font-weight: 600; letter-spacing: .17em; line-height: 1.6; }
 .home-kicker-line { display: inline-block; width: 28px; height: 1px; flex: none; background: currentColor; }
 .home-hero { padding-block: 22px 32px; background: var(--home-cream); }
-.home-hero-shell { position: relative; display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; width: min(1240px, calc(100% - 40px)); min-height: 700px; overflow: hidden; border: 1px solid #e2e9cc; border-radius: 18px 18px 38px 18px; padding: 52px 64px 38px; background: linear-gradient(120deg, #f7fae9 0%, #f0f7d6 55%, #e6f0c3 100%); }
+.home-hero-shell { position: relative; display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; width: min(1240px, calc(100% - 40px)); min-height: 700px; overflow: hidden; border: 1px solid transparent; border-radius: 18px 18px 38px 18px; padding: 52px 64px 38px; background: transparent; }
 .home-hero-content { position: relative; z-index: 2; min-width: 0; }
 .home-hero-eyebrow { display: inline-flex; align-items: center; gap: 11px; color: #516448; font-size: 9px; font-weight: 500; line-height: 1.6; letter-spacing: .13em; }
 .home-hero-eyebrow > span { width: 33px; height: 1px; background: currentColor; }
@@ -29,7 +29,6 @@
 .home-hero-facts dd { margin: 0; color: #24442b; font-family: 'DM Serif Display', Georgia, serif; font-size: 29px; line-height: 1.15; letter-spacing: -.025em; }
 .home-hero-facts small { display: block; margin-top: 4px; color: #6d7d5e; font-family: 'DM Sans', sans-serif; font-size: 8px; line-height: 1.5; letter-spacing: 0; }
 .home-hero-food { position: relative; z-index: 1; display: grid; align-items: end; min-width: 0; height: 610px; margin: 0; }
-.home-hero-food-glow { position: absolute; inset: 18% -13% 8% -8%; border-radius: 50%; background: radial-gradient(ellipse, #fffff4c9, transparent 69%); pointer-events: none; }
 .home-hero-food > img { position: relative; z-index: 1; display: block; width: 118%; max-width: none; height: 565px; margin-left: -25px; object-fit: contain; filter: drop-shadow(0 16px 18px #3f502424); }
 .home-hero-seal { position: absolute; z-index: 2; top: 0; right: 10px; display: flex; align-items: center; gap: 10px; color: #284932; font-size: 11px; line-height: 1.5; }
 .home-hero-seal > span { display: grid; width: 42px; height: 42px; flex: none; place-items: center; border: 1px solid #b0c292; border-radius: 50%; background: #fbfff1a3; }
