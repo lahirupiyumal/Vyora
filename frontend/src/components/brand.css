@@ -4,10 +4,9 @@
 .brand-announcement-note { color: #c6d3c1; }
 .brand-header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid #1e443517; background: #f7f6eef5; backdrop-filter: blur(16px); }
 .brand-header-inner { min-height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
-.brand-logo { display: inline-flex; align-items: center; gap: 11px; flex: none; color: #1e4435; text-decoration: none; }
-.brand-logo-mark { display: grid; place-items: center; width: 43px; height: 43px; border-radius: 50%; background: #1e4435; color: #f7f6ee; }
-.brand-logo-wordmark { font-size: 23px; line-height: 1; font-weight: 700; letter-spacing: .19em; }
-.brand-logo-wordmark small { display: block; margin-top: 8px; color: #75816e; font-size: 7px; line-height: 1; font-weight: 600; letter-spacing: .29em; }
+.brand-logo { display: inline-flex; align-items: center; flex: none; border-radius: 50%; color: #1e4435; text-decoration: none; }
+.brand-logo-image { display: block; width: 68px; height: 68px; border-radius: 50%; object-fit: contain; filter: drop-shadow(0 5px 10px #1e443518); transition: transform .2s ease, filter .2s ease; }
+.brand-logo:hover .brand-logo-image { transform: translateY(-1px); filter: drop-shadow(0 7px 13px #1e443524); }
 .brand-desktop-nav { display: flex; align-items: center; gap: 29px; }
 .brand-nav-link { display: inline-flex; position: relative; align-items: center; min-height: 44px; color: #5b6559; font-size: 12px; line-height: 1.4; font-weight: 500; text-decoration: none; }
 .brand-nav-link::after { content: ''; position: absolute; left: 50%; bottom: 3px; width: 4px; height: 4px; border-radius: 50%; background: #c98945; opacity: 0; transform: translateX(-50%); transition: opacity .2s ease; }
@@ -24,8 +23,8 @@
 .brand-footer { background: #183b2d; color: #e9eee3; }
 .brand-footer-grid { display: grid; grid-template-columns: 1.2fr .7fr .85fr 1.25fr; gap: 45px; padding-block: 67px 49px; }
 .brand-logo-light { color: #f7f6ee; }
-.brand-logo-light .brand-logo-mark { border: 1px solid #d3dfc64d; background: transparent; color: #c8d5b5; }
-.brand-logo-light .brand-logo-wordmark small { color: #c6d3c1; }
+.brand-footer .brand-logo-image { width: 116px; height: 116px; filter: drop-shadow(0 9px 18px #071b1238); }
+.brand-footer .brand-logo:hover .brand-logo-image { filter: drop-shadow(0 11px 22px #071b124f); }
 .brand-footer-about > p { margin-top: 23px; color: #b8c8b7; font-size: 12px; line-height: 1.9; }
 .brand-footer-location { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; color: #bdcda9; font-size: 10px; }
 .brand-footer .brand-footer-label { display: block; margin: 5px 0 0; color: #c2d0b9; font-family: inherit; font-size: 9px; line-height: 1.6; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
@@ -54,6 +53,7 @@
   .brand-desktop-nav { display: none; }
   .brand-menu-toggle { display: grid; }
   .brand-header-inner { min-height: 76px; }
+  .brand-header .brand-logo-image { width: 60px; height: 60px; }
   .brand-mobile-nav { display: block; max-height: calc(100dvh - 107px); overflow-y: auto; border-top: 1px solid #1e443517; padding-block: 9px 18px; background: #f7f6ee; }
   .brand-mobile-link { display: flex; align-items: center; justify-content: space-between; min-height: 49px; padding: 13px 10px; border-bottom: 1px solid #1e443514; color: #1e4435; font-size: 14px; text-decoration: none; }
   .brand-mobile-link.is-active { font-weight: 700; color: #7c592e; }
@@ -67,11 +67,8 @@
   .brand-header-inner { min-height: 72px; gap: 12px; }
   .brand-header-actions { gap: 2px; }
   .brand-shop-link { display: none; }
-  .brand-logo { gap: 9px; }
-  .brand-logo-mark { width: 37px; height: 37px; }
-  .brand-logo-mark svg { width: 21px; height: 21px; }
-  .brand-logo-wordmark { font-size: 21px; }
-  .brand-logo-wordmark small { margin-top: 6px; font-size: 6px; }
+  .brand-header .brand-logo-image { width: 56px; height: 56px; }
+  .brand-footer .brand-logo-image { width: 104px; height: 104px; }
   .brand-mobile-nav { max-height: calc(100dvh - 101px); }
   .brand-footer-grid { grid-template-columns: 1fr 1fr; gap: 34px 20px; padding-block: 43px 27px; }
   .brand-footer-about { grid-column: 1 / -1; }

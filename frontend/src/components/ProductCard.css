@@ -17,21 +17,21 @@
   transform: translateY(-3px);
 }
 
-.catalog-product-image { position: relative; aspect-ratio: 4 / 3; overflow: hidden; flex: none; background: #ececdf; }
+.catalog-product-image { position: relative; aspect-ratio: 3 / 2; overflow: hidden; flex: none; background: #ececdf; }
 .catalog-product-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 80% center; transition: transform .45s ease; }
 .catalog-product-card:hover .catalog-product-image img { transform: scale(1.035); }
-.catalog-product-badge { position: absolute; top: 12px; left: 12px; max-width: calc(100% - 24px); border-radius: 3px; padding: 6px 8px; background: #fffef9eb; color: #1e4435; font-size: 8px; line-height: 1.4; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
-.catalog-product-body { display: flex; flex: 1; flex-direction: column; min-width: 0; padding: 20px 18px 18px; }
-.catalog-product-weight { margin: 0; color: #8b6339; font-size: 9px; line-height: 1.6; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
-.catalog-product-body > h3 { min-height: 54px; margin: 9px 0 0; color: #1e4435; font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; line-height: 1.22; font-weight: 400; letter-spacing: -.025em; overflow-wrap: anywhere; }
-.catalog-product-description { display: -webkit-box; min-height: 61px; margin: 12px 0 0; overflow: hidden; color: #687262; font-size: 12px; line-height: 1.7; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; }
-.catalog-product-purchase { margin-top: auto; padding-top: 21px; }
+.catalog-product-badge { position: absolute; top: 10px; left: 10px; max-width: calc(100% - 20px); border-radius: 3px; padding: 5px 7px; background: #fffef9eb; color: #1e4435; font-size: 7px; line-height: 1.4; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+.catalog-product-body { display: flex; flex: 1; flex-direction: column; min-width: 0; padding: 16px 15px 15px; }
+.catalog-product-weight { margin: 0; color: #8b6339; font-size: 8px; line-height: 1.6; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; }
+.catalog-product-body > h3 { min-height: 48px; margin: 7px 0 0; color: #1e4435; font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; line-height: 1.22; font-weight: 400; letter-spacing: -.025em; overflow-wrap: anywhere; }
+.catalog-product-description { display: -webkit-box; min-height: 36px; margin: 9px 0 0; overflow: hidden; color: #687262; font-size: 10px; line-height: 1.65; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; }
+.catalog-product-purchase { margin-top: auto; padding-top: 16px; }
 .catalog-product-price { display: grid; gap: 3px; }
-.catalog-product-price > span { color: #6f7868; font-size: 9px; line-height: 1.6; }
-.catalog-product-price > strong { color: #1e4435; font-size: 21px; line-height: 1.3; font-weight: 600; letter-spacing: -.03em; }
-.catalog-product-availability { margin: 7px 0 0; color: #6a7561; font-size: 10px; line-height: 1.6; overflow-wrap: anywhere; }
-.catalog-product-actions { display: grid; grid-template-columns: .9fr 1.1fr; gap: 8px; margin-top: 17px; }
-.catalog-product-actions > a, .catalog-product-actions > button { display: inline-flex; min-width: 0; min-height: 44px; align-items: center; justify-content: center; gap: 6px; border: 1px solid #1e4435; border-radius: 5px; padding: 9px 6px; font-size: 10px; line-height: 1.4; font-weight: 600; text-align: center; text-decoration: none; }
+.catalog-product-price > span { color: #6f7868; font-size: 8px; line-height: 1.6; }
+.catalog-product-price > strong { color: #1e4435; font-size: 19px; line-height: 1.3; font-weight: 600; letter-spacing: -.03em; }
+.catalog-product-availability { margin: 5px 0 0; color: #6a7561; font-size: 9px; line-height: 1.6; overflow-wrap: anywhere; }
+.catalog-product-actions { display: grid; grid-template-columns: .9fr 1.1fr; gap: 7px; margin-top: 13px; }
+.catalog-product-actions > a, .catalog-product-actions > button { display: inline-flex; min-width: 0; min-height: 40px; align-items: center; justify-content: center; gap: 5px; border: 1px solid #1e4435; border-radius: 5px; padding: 8px 5px; font-size: 9px; line-height: 1.4; font-weight: 600; text-align: center; text-decoration: none; }
 .catalog-product-actions svg { flex: none; }
 .catalog-product-details { background: transparent; color: #1e4435; }
 .catalog-product-details:hover { background: #e7ecdf; }

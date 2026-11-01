@@ -9,7 +9,7 @@ export default function ProductCard({ product }) {
   return <article className="product-card catalog-product-card">
     <div className="catalog-product-image">
       <img src={product.image} alt={`${product.name} product concept`} loading="lazy" decoding="async" />
-      <span className="catalog-product-badge">Product concept</span>
+      <span className="catalog-product-badge">{product.variant || 'Product'} pack</span>
     </div>
     <div className="catalog-product-body">
       <p className="catalog-product-weight">{product.weight}</p>
