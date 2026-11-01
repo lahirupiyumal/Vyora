@@ -20,7 +20,7 @@ export default function Footer() {
           <span className="brand-footer-location"><MapPin size={14} aria-hidden="true" /> Inspired by Sri Lanka</span>
         </div>
         <FooterLinks title="Discover" links={[["Home", "/"], ["The product", "/shop"], ["Our story", "/our-story"], ["Ingredients", "/ingredients"]]} />
-        <FooterLinks title="A little more" links={[["Get in touch", "/contact"], ["Privacy policy", "/privacy"], ["Terms & conditions", "/terms"]]} />
+        <FooterLinks title="A little more" links={[["Get in touch", "/contact"], ["Share feedback", "/feedback"], ["Privacy policy", "/privacy"], ["Terms & conditions", "/terms"]]} />
         <div className="brand-footer-newsletter">
           <span className="brand-footer-label">THE VYORA LETTER</span>
           <h2>Good things take root.</h2>

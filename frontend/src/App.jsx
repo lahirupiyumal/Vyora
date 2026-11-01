@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import Contact from './pages/Contact'
+import Feedback from './pages/Feedback'
 import Home from './pages/Home'
 import Ingredients from './pages/Ingredients'
 import Legal from './pages/Legal'
@@ -18,6 +19,7 @@ export default function App() {
       <Route path="our-story" element={<OurStory/>}/>
       <Route path="ingredients" element={<Ingredients/>}/>
       <Route path="contact" element={<Contact/>}/>
+      <Route path="feedback" element={<Feedback/>}/>
       <Route path="privacy" element={<Legal title="Privacy Policy"/>}/>
       <Route path="terms" element={<Legal title="Terms & Conditions"/>}/>
       <Route path="*" element={<NotFound/>}/>

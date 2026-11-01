@@ -1,0 +1,63 @@
+[
+  {
+    "file": "garlic.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Garlic_cloves.jpg",
+    "creator": "Leon Brooks",
+    "license": "Public domain, released by author"
+  },
+  {
+    "file": "ginger.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Ginger_Root_(Zingiber_officinale).jpg",
+    "creator": "Rubel Das",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "file": "tomato.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Cluster_of_Tomatoes_on_Vine.jpg",
+    "creator": "Alabama Extension",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "file": "onion.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Sweet_onions_in_a_pile.jpg",
+    "creator": "Jeffery Martin",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "file": "carrot.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fresh_Carrots.jpg",
+    "creator": "Yerson Retamel",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "file": "pumpkin.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Pumpkin_vegetable.jpg",
+    "creator": "Leon Brooks",
+    "license": "Public domain, released by author"
+  },
+  {
+    "file": "curry-leaves.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Fresh_curry_leaves.jpg",
+    "creator": "Nithyashree Balasupramaniyan",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "file": "chicken.jpg",
+    "source": "https://commons.wikimedia.org/wiki/File:Raw_chicken_slices.jpg",
+    "creator": "kakyusei",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "file": "spices.jpg",
+    "source": "https://unsplash.com/photos/assorted-spices-in-clear-glass-containers-dSbUXPQ8Sm8",
+    "creator": "Merve Sehirli Nasir",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license"
+  }
+]

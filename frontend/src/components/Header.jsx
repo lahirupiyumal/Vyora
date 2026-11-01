@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext'
 import Logo from './Logo'
 import './brand.css'
 
-const links = [['Home', '/'], ['Shop', '/shop'], ['Our Story', '/our-story'], ['Ingredients', '/ingredients'], ['Contact', '/contact']]
+const links = [['Home', '/'], ['Shop', '/shop'], ['Our Story', '/our-story'], ['Ingredients', '/ingredients'], ['Contact', '/contact'], ['Feedback', '/feedback']]
 
 export default function Header() {
   const [open, setOpen] = useState(false)

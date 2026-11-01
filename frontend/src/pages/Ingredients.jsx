@@ -1,13 +1,66 @@
-import { ArrowRight, CheckCircle2, Droplets, FlaskConical, PackageCheck, ShieldCheck } from 'lucide-react'
+import { ArrowRight, ClipboardCheck, CookingPot, Droplets, FlaskConical, Package, PackageCheck } from 'lucide-react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { SectionHead } from './Home'
+import { ingredientCategories, ingredients } from '../data/ingredients'
+import './Ingredients.css'
 
-const ingredients=[['Carrot','Naturally colourful and being considered as a possible base vegetable.','https://images.unsplash.com/photo-1447175008436-170170753b4?auto=format&fit=crop&w=800&q=85'],['Pumpkin','A possible ingredient candidate for body, colour and familiar vegetable character.','https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=800&q=85'],['Tomato','Being explored as a candidate for savoury depth and vegetable flavour.','https://images.unsplash.com/photo-1546470427-e5ac89cd0b31?auto=format&fit=crop&w=800&q=85'],['Onion','A familiar savoury ingredient being considered during recipe development.','https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=800&q=85'],['Garlic','A potential aromatic element whose final quantity would require recipe testing.','https://images.unsplash.com/photo-1540148426945-6cf22a6b2383?auto=format&fit=crop&w=800&q=85'],['Herbs & spices','Selected herbs and spices may be considered to complete the proposed flavour profile.','https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=800&q=85']]
-const process=['Select vegetables meeting quality and food-safety requirements','Wash and prepare under hygienic conditions','Dehydrate under controlled conditions','Grind and sieve the dried vegetables','Blend with selected herbs and spices','Package under appropriate hygienic conditions']
-export default function Ingredients(){return <>
-  <h1 className="sr-only">Ingredients</h1>
-  <section className="section-space"><div className="site-container"><SectionHead eyebrow="POSSIBLE FORMULATION" title="Vegetable ingredients under consideration." copy="These are illustrative candidates—not a confirmed final recipe. Inclusion depends on formulation, sensory evaluation and product testing."/><div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{ingredients.map(([name,copy,image])=><article className="ingredient-card" key={name}><div className="h-56 overflow-hidden bg-[#E7EBDD]"><img src={image} onError={e=>{e.currentTarget.style.display='none'}} alt={`${name} ingredient candidate`} className="h-full w-full object-cover transition duration-500 hover:scale-105"/></div><div className="p-6"><h3 className="text-2xl font-bold">{name}</h3><p className="mt-3 text-sm leading-6 text-[#6B756C]">{copy}</p><span className="mt-4 inline-block rounded-full bg-[#A8C3A0]/20 px-3 py-1 text-[11px] font-bold text-[#245C45]">FINAL INCLUSION TO BE CONFIRMED</span></div></article>)}</div></div></section>
-  <section className="section-space bg-white"><div className="site-container grid gap-12 lg:grid-cols-[.8fr_1.2fr]"><div><span className="eyebrow">PLANNED METHOD</span><h2 className="mt-5 text-4xl font-bold">How ingredients could become soup mix.</h2><p className="mt-4 leading-7 text-[#6B756C]">The production flow must be validated and operated with suitable food-safety procedures.</p></div><div className="grid gap-3">{process.map((x,i)=><div className="flex items-center gap-4 rounded-2xl bg-[#FAF8F0] p-4" key={x}><span className="grid size-10 shrink-0 place-items-center rounded-full bg-[#245C45] font-bold text-white">{i+1}</span><p className="font-semibold">{x}</p></div>)}</div></div></section>
-  <section className="section-space bg-[#245C45] text-white"><div className="site-container grid items-center gap-10 lg:grid-cols-2"><div><span className="eyebrow eyebrow-light"><ShieldCheck size={15}/> QUALITY & SAFETY</span><h2 className="mt-5 text-4xl font-bold">Safety is never optional.</h2><p className="mt-5 leading-7 text-white/70">The concept requires suitable raw-material selection, hygienic handling, controlled processing, appropriate packaging, product testing, shelf-life validation and accurate ingredient and allergen labelling.</p><div className="mt-6 rounded-2xl bg-[#183D2E] p-5 font-semibold text-[#F7D4AF]">Spoiled, rotten, mould-contaminated or otherwise unsafe vegetables are never acceptable ingredients.</div></div><div className="grid gap-4 sm:grid-cols-2">{[[Droplets,'Hygienic handling'],[FlaskConical,'Product testing'],[PackageCheck,'Packaging assessment'],[CheckCircle2,'Accurate labelling']].map(([Icon,x])=><div className="rounded-2xl border border-white/10 bg-white/5 p-5" key={x}><Icon className="text-[#E99A45]"/><strong className="mt-4 block">{x}</strong></div>)}</div></div></section>
-  <section className="section-space"><div className="site-container"><SectionHead eyebrow="PREPARATION GUIDE" title="Four simple steps—details to be tested." copy="Final water quantity, mix quantity, cooking duration and serving size will be confirmed after product testing."/><div className="grid gap-4 md:grid-cols-4">{['Measure the confirmed amount','Add the specified water quantity','Stir and cook for the tested duration','Serve according to confirmed serving size'].map((x,i)=><article className="prep-card" key={x}><b>0{i+1}</b><p className="mt-3 font-semibold text-[#252A25]">{x}</p></article>)}</div><div className="mt-10 rounded-3xl border border-[#245C45]/10 bg-white p-7"><h3 className="text-xl font-bold">Storage information</h3><p className="mt-3 leading-7 text-[#6B756C]">Storage instructions and shelf life will be established through suitable packaging assessment and product testing. No specific shelf-life claim is made at prototype stage.</p></div><div className="mt-9 text-center"><Link className="btn-accent" to="/shop">Shop VYORA <ArrowRight size={18}/></Link></div></div></section>
-  </>}
+const process = [
+  { title: 'Choose thoughtfully', copy: 'Explore suitable vegetables, aromatics and ingredient sources for each formulation.', icon: ClipboardCheck },
+  { title: 'Prepare with care', copy: 'Develop preparation and processing steps appropriate to each ingredient and recipe.', icon: Droplets },
+  { title: 'Refine the blend', copy: 'Evaluate flavour, texture and preparation through formulation and product testing.', icon: FlaskConical },
+  { title: 'Pack with purpose', copy: 'Assess packaging, ingredient information and storage requirements before launch.', icon: PackageCheck },
+]
+
+export default function Ingredients() {
+  const [category, setCategory] = useState('all')
+  const visibleIngredients = ingredients.filter(ingredient => category === 'all' || ingredient.category === category)
+
+  return <div className="ingredients-page">
+    <section className="ingredients-collection" aria-labelledby="ingredient-collection-title">
+      <div className="site-container">
+        <h1 id="ingredient-collection-title" className="sr-only">Ingredients</h1>
+        <p className="sr-only" role="status">Showing {visibleIngredients.length} of {ingredients.length} ingredients</p>
+        <div className="ingredients-filters" role="group" aria-label="Filter ingredients by category">
+          {ingredientCategories.map(({ id, label }) => <button type="button" key={id} className={`ingredients-filter${category === id ? ' is-active' : ''}`} aria-pressed={category === id} aria-controls="ingredients-grid" onClick={() => setCategory(id)}>
+            {label}<span>{id === 'all' ? ingredients.length : ingredients.filter(ingredient => ingredient.category === id).length}</span>
+          </button>)}
+        </div>
+        <p className="ingredients-recipe-note">Recipe in development. Final ingredients and quantities are subject to formulation and testing.</p>
+        <div id="ingredients-grid" className="ingredients-grid">
+          {visibleIngredients.map(ingredient => <IngredientCard key={ingredient.id} ingredient={ingredient} />)}
+        </div>
+      </div>
+    </section>
+
+    <section className="ingredients-process" aria-labelledby="ingredients-process-title">
+      <div className="site-container">
+        <header className="ingredients-section-heading"><span className="ingredients-eyebrow">THOUGHTFULLY DEVELOPED</span><h2 id="ingredients-process-title">A little care at every stage.</h2><p>Our planned approach, from selecting ingredients to developing a blend that belongs in your everyday.</p></header>
+        <ol className="ingredients-process-grid">
+          {process.map(({ title, copy, icon: Icon }, index) => <li key={title}>
+            <div className="ingredients-process-top"><span>{String(index + 1).padStart(2, '0')}</span><Icon size={24} strokeWidth={1.4} aria-hidden="true" /></div>
+            <h3>{title}</h3><p>{copy}</p>
+          </li>)}
+        </ol>
+      </div>
+    </section>
+
+    <section className="ingredients-preparation" aria-labelledby="ingredients-preparation-title">
+      <div className="site-container ingredients-preparation-grid">
+        <div className="ingredients-preparation-copy"><span className="ingredients-eyebrow">YOUR EVERYDAY RITUAL</span><h2 id="ingredients-preparation-title">From pantry<br />to a <em>warm bowl.</em></h2><p>We&apos;re developing a simple preparation guide for each formulation. Final mix quantities, water amounts and cooking times will be confirmed through product testing.</p><Link className="ingredients-button" to="/shop">Explore the VYORA concept <ArrowRight size={16} aria-hidden="true" /></Link></div>
+        <aside className="ingredients-storage" aria-labelledby="ingredients-storage-title"><Package size={29} strokeWidth={1.4} aria-hidden="true" /><h3 id="ingredients-storage-title">Prepared with care.<br />Stored with care.</h3><p>Storage instructions and shelf life will be established through packaging assessment and product testing. Follow the information on the finished pack when available.</p><p className="ingredients-final-note">A product concept in development. Ingredient photography is illustrative.</p></aside>
+      </div>
+    </section>
+  </div>
+}
+
+function IngredientCard({ ingredient }) {
+  const [imageFailed, setImageFailed] = useState(false)
+
+  return <article className="ingredients-card">
+    <div className="ingredients-card-image">
+      {imageFailed ? <div className="ingredients-card-fallback" role="img" aria-label={`${ingredient.name} image unavailable`}><CookingPot size={42} strokeWidth={1.2} aria-hidden="true" /></div> : <img src={ingredient.image} alt={ingredient.imageAlt} width="640" height="480" loading="lazy" onError={() => setImageFailed(true)} />}
+      <span className="ingredients-card-number">{String(ingredients.indexOf(ingredient) + 1).padStart(2, '0')}</span>
+    </div>
+    <div className="ingredients-card-copy"><span className="ingredients-card-category">{ingredient.categoryLabel}</span><h3>{ingredient.name}</h3><p>{ingredient.description}</p>{ingredient.note && <span className="ingredients-variant-note">{ingredient.note}</span>}</div>
+  </article>
+}

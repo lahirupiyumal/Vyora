@@ -1,17 +1,19 @@
 import { ArrowLeft, Info, Minus, PackageSearch, Plus, ShoppingBag, Sprout, CookingPot, Package } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
+import ProductFeedback from '../components/ProductFeedback'
 import { useCart } from '../context/CartContext'
 import { products } from '../data/products'
 import './ProductDetails.css'
 
 export default function ProductDetails() {
   const { productId } = useParams()
+  const { hash } = useLocation()
   const product = products.find(item => item.id === productId)
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' })
-  }, [productId])
+    if (hash !== '#product-feedback') window.scrollTo({ top: 0, behavior: 'auto' })
+  }, [productId, hash])
 
   return <section className="product-details-page">
     <div className="site-container">
@@ -86,5 +88,6 @@ function ProductContent({ product }) {
         <p>{text}</p>
       </article>)}
     </div>}
+    <ProductFeedback product={product} />
   </>
 }

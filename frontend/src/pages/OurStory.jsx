@@ -1,14 +1,149 @@
-import { ArrowRight, CheckCircle2, HeartHandshake, Lightbulb, PackageCheck, Sprout } from 'lucide-react'
+import { ArrowDown, ArrowRight, Carrot, Clock, HeartHandshake, Leaf, Lightbulb, MapPin, Recycle, ShieldCheck, Soup, Sprout } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { SectionHead } from './Home'
+import harvestImage from '../assets/vegetable-harvest.jpg'
+import { primaryProduct } from '../data/products'
+import './OurStory.css'
 
-const values=[[PackageCheck,'Quality First','Appropriate raw-material checks, hygienic handling and product testing come before commercial launch.'],[Lightbulb,'Everyday Convenience','We are exploring a product that reduces the steps involved in preparing vegetable soup.'],[Sprout,'Responsible Sourcing','The concept considers suitable lower-commercial-value vegetables without compromising safety.'],[HeartHandshake,'Local Value Creation','VYORA aims to build additional value around Sri Lankan vegetables and supplier relationships.']]
-const stages=['Supplier selection','Vegetable quality checks','Preparation and dehydration','Grinding and blending','Packaging and storage']
-export default function OurStory(){return <>
-  <section className="page-hero"><div className="site-container grid items-center gap-10 lg:grid-cols-2"><div><span className="eyebrow">OUR STORY</span><h1>Good Food. Thoughtful Choices.</h1><p>VYORA began with an idea: make vegetable-based soup more convenient while finding additional value in locally available vegetables.</p></div><div className="story-photo" role="img" aria-label="Fresh vegetables in a warm food preparation setting"/></div></section>
-  <section className="section-space"><div className="site-container grid gap-12 lg:grid-cols-2"><div><span className="eyebrow">THE IDEA BEHIND VYORA</span><h2 className="mt-5 text-4xl font-bold leading-tight">A familiar meal, thoughtfully reimagined.</h2></div><div className="space-y-5 leading-8 text-[#6B756C]"><p>Preparing vegetable soup from scratch can require shopping, washing, chopping, cooking and cleaning—steps that are difficult to fit into a busy day.</p><p>VYORA is a developing business concept exploring how suitable vegetables can be hygienically dehydrated and blended into a convenient soup mix.</p><p>The concept also considers vegetables that remain safe and suitable but may have lower commercial value due to appearance or temporary oversupply. Quality, hygiene and responsible selection remain essential.</p></div></div></section>
-  <section className="section-space bg-white"><div className="site-container grid gap-6 md:grid-cols-2"><article className="mission-card bg-[#245C45] text-white"><span>OUR MISSION</span><h2>To develop convenient vegetable-based food products while creating value through responsible sourcing and thoughtful food innovation.</h2></article><article className="mission-card bg-[#F2E7D8]"><span>OUR VISION</span><h2>To grow into a recognised Sri Lankan brand for convenient vegetable-based products, built around quality, innovation and responsible use of local resources.</h2></article></div></section>
-  <section className="section-space"><div className="site-container"><SectionHead eyebrow="OUR VALUES" title="Principles for responsible growth."/><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">{values.map(([Icon,title,copy])=><article className="feature-card" key={title}><span className="feature-icon"><Icon/></span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
-  <section className="section-space bg-[#183D2E] text-white"><div className="site-container"><SectionHead light eyebrow="PROPOSED PROCESS" title="Built around care at every stage." copy="Each stage would require appropriate food-safety controls, validation and testing before commercial production."/><div className="mx-auto max-w-4xl">{stages.map((stage,i)=><div className="flex items-center gap-5 border-b border-white/10 py-5" key={stage}><b className="text-2xl text-[#E99A45]">0{i+1}</b><CheckCircle2 className="text-[#A8C3A0]"/><strong className="text-lg">{stage}</strong></div>)}</div></div></section>
-  <section className="section-space text-center"><div className="site-container"><h2 className="text-4xl font-bold md:text-5xl">Discover a More Convenient Way to Enjoy Vegetable Soup.</h2><Link className="btn-accent mt-8" to="/shop">Explore Our Product <ArrowRight size={18}/></Link></div></section>
-  </>}
+const journey = [
+  {
+    label: 'Where it begins',
+    title: 'A familiar kind of comfort.',
+    copy: 'A warm bowl of vegetable soup. Simple ingredients, a little patience, and a reason to slow down. The everyday comfort that inspired VYORA starts here.',
+    icon: Sprout,
+  },
+  {
+    label: 'The everyday challenge',
+    title: 'Good food. Not always enough time.',
+    copy: 'Shopping, washing, chopping, cooking and cleaning. Between studies, work and everything else, even a simple bowl of soup can ask for more time than we have.',
+    icon: Clock,
+  },
+  {
+    label: 'The spark',
+    title: 'A little idea with possibility.',
+    copy: 'What if familiar vegetables could become a convenient soup mix? We began exploring careful dehydration and blending, with thoughtful sourcing and quality at the centre.',
+    icon: Lightbulb,
+  },
+  {
+    label: 'The idea taking shape',
+    title: 'Your everyday, a little warmer.',
+    copy: 'VYORA is our developing vegetable soup mix concept: an idea for simpler preparation, familiar flavour and additional value around suitable, locally available vegetables.',
+    icon: Soup,
+  },
+]
+
+const sourcing = [
+  { title: 'Carrot & pumpkin', copy: 'Exploring suitable seasonal vegetable growers.', icon: Carrot },
+  { title: 'Tomato, onion & garlic', copy: 'Planned relationships with trusted local suppliers.', icon: Sprout },
+  { title: 'Herbs & spices', copy: 'Ingredient partners to suit our final formulation.', icon: Leaf },
+]
+
+const values = [
+  { title: 'Simple ingredients', copy: 'Familiar vegetables, herbs and spices guide the recipe we are developing. Good ideas can begin with the things we already know.', icon: Leaf },
+  { title: 'Quality first', copy: 'Careful selection, hygienic handling and product testing come before launch. Every step deserves the same attention as the first.', icon: ShieldCheck },
+  { title: 'Everyday convenience', copy: 'A soup concept designed around busy routines, simpler preparation and making a little more room for the moments that matter.', icon: Clock },
+  { title: 'Local connection', copy: 'Our ambition is to build lasting relationships with Sri Lankan growers and suppliers, and create more value close to home.', icon: MapPin },
+  { title: 'Customer trust', copy: 'Clear ingredient information, thoughtful choices and honest answers. We want trust to be part of the story from the beginning.', icon: HeartHandshake },
+  { title: 'Responsible growth', copy: 'Exploring the potential of suitable vegetables that may be overlooked, with safety and quality at the heart of every decision.', icon: Recycle },
+]
+
+export default function OurStory() {
+  return <div className="story-page">
+    <section className="story-hero" aria-labelledby="story-title">
+      <div className="site-container story-hero-grid">
+        <div className="story-hero-copy">
+          <span className="story-pill"><Sprout size={14} aria-hidden="true" /> The VYORA story</span>
+          <h1 id="story-title">Our story.</h1>
+          <blockquote className="story-quote">“Some comforts are worth making room for, even on the busiest days.”</blockquote>
+          <p className="story-hero-paragraph">Modern days move quickly. A homemade bowl of vegetable soup asks us to slow down: to shop, wash, chop and cook. Those small rituals can be hard to fit around everything else.</p>
+          <p className="story-hero-paragraph">VYORA began with a simple question: could we keep that familiar comfort while making preparation easier? We&apos;re exploring a vegetable soup mix with selected, carefully prepared ingredients, inspired by Sri Lankan kitchens and everyday life.</p>
+          <a className="story-text-link" href="#story-journey">Follow our story <ArrowDown size={15} aria-hidden="true" /></a>
+        </div>
+        <figure className="story-hero-visual">
+          <div className="story-hero-photo">
+            <img src={primaryProduct.image} alt="VYORA soup mix concept pack with a warm bowl of vegetable soup and fresh ingredients" width="1672" height="941" fetchPriority="high" />
+            <span className="story-photo-note">Product concept</span>
+          </div>
+          <div className="story-origin-badge">
+            <span className="story-badge-icon"><Sprout size={23} strokeWidth={1.4} aria-hidden="true" /></span>
+            <div><strong>ROOTED IN SRI LANKA</strong><small>A local idea. Everyday possibilities.</small></div>
+          </div>
+          <span className="story-visual-index">01 / THE VYORA WAY</span>
+          <figcaption className="story-photo-caption"><span>A familiar kind of comfort.</span><small>THOUGHTFULLY REIMAGINED</small></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="story-journey" className="story-section story-journey" aria-labelledby="story-journey-title">
+      <div className="site-container">
+        <header className="story-section-heading">
+          <span className="story-eyebrow">HOW VYORA CAME TO BE</span>
+          <h2 id="story-journey-title">From a familiar ritual<br />to an everyday <em>possibility.</em></h2>
+          <p>A small idea, inspired by the way we live and the things we love.</p>
+        </header>
+        <ol className="story-timeline">
+          {journey.map(({ label, title, copy, icon: Icon }, index) => <li className="story-timeline-item" key={title}>
+            <span className="story-timeline-icon"><Icon size={25} strokeWidth={1.4} aria-hidden="true" /></span>
+            <article className="story-timeline-card">
+              <div className="story-step-label"><span>{String(index + 1).padStart(2, '0')}</span><i aria-hidden="true" /><span>{label}</span></div>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </article>
+          </li>)}
+        </ol>
+      </div>
+    </section>
+
+    <section className="story-section story-sourcing" aria-labelledby="story-sourcing-title">
+      <div className="site-container story-sourcing-grid">
+        <div className="story-sourcing-copy">
+          <span className="story-pill story-pill-dark"><MapPin size={14} aria-hidden="true" /> Rooted in Sri Lanka</span>
+          <h2 id="story-sourcing-title">Inspired by the land<br />we call <em>home.</em></h2>
+          <p>Good food begins long before the kitchen. Our aim is to build relationships with Sri Lankan growers and trusted suppliers, exploring suitable vegetables that may be overlooked because of appearance or seasonal oversupply. Quality, suitability and careful handling come first.</p>
+          <ul className="story-source-list">
+            {sourcing.map(({ title, copy, icon: Icon }) => <li key={title}>
+              <span className="story-source-icon"><Icon size={22} strokeWidth={1.4} aria-hidden="true" /></span>
+              <div><h3>{title}</h3><p>{copy}</p></div>
+            </li>)}
+          </ul>
+          <p className="story-sourcing-note">Sourcing relationships and the final recipe are still in development.</p>
+          <Link className="story-text-link" to="/ingredients">Get to know our ingredients <ArrowRight size={15} aria-hidden="true" /></Link>
+        </div>
+        <figure className="story-sourcing-visual">
+          <div className="story-sourcing-photo"><img src={harvestImage} alt="A colourful selection of fresh vegetables at a produce market" width="1200" height="1000" loading="lazy" /></div>
+          <div className="story-land-label">
+            <span className="story-badge-icon"><MapPin size={24} strokeWidth={1.4} aria-hidden="true" /></span>
+            <div><strong>Goodness, close to home.</strong><small>OUR LOCAL SOURCING AMBITION</small></div>
+          </div>
+          <figcaption className="story-sourcing-caption">FRESH PRODUCE. FAMILIAR POSSIBILITIES.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section className="story-section story-values" aria-labelledby="story-values-title">
+      <div className="site-container">
+        <header className="story-section-heading">
+          <span className="story-pill"><Leaf size={14} aria-hidden="true" /> What we stand for</span>
+          <h2 id="story-values-title">Our values.<br /><em>In every little decision.</em></h2>
+        </header>
+        <div className="story-values-grid">
+          {values.map(({ title, copy, icon: Icon }) => <article className="story-value-card" key={title}>
+            <span className="story-value-icon"><Icon size={24} strokeWidth={1.4} aria-hidden="true" /></span>
+            <h3>{title}</h3>
+            <p>{copy}</p>
+          </article>)}
+        </div>
+      </div>
+    </section>
+
+    <section className="story-direction" aria-labelledby="story-direction-title">
+      <div className="site-container">
+        <header className="story-direction-heading"><span className="story-eyebrow">GROWING WITH PURPOSE</span><h2 id="story-direction-title">A thoughtful beginning.<br /><em>A direction worth growing in.</em></h2></header>
+        <div className="story-direction-grid">
+          <article><span className="story-direction-label">OUR MISSION</span><h3>To develop convenient vegetable-based food products while creating value through responsible sourcing and thoughtful food innovation.</h3></article>
+          <article><span className="story-direction-label">OUR VISION</span><h3>To grow into a recognised Sri Lankan brand for convenient vegetable-based products, built around quality, innovation and responsible use of local resources.</h3></article>
+        </div>
+        <div className="story-direction-bottom"><p>A product concept in development, shaped by thoughtful choices.</p><Link className="story-button" to="/shop">Discover the VYORA concept <ArrowRight size={16} aria-hidden="true" /></Link></div>
+      </div>
+    </section>
+  </div>
+}
