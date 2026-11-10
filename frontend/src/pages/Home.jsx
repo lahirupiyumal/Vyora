@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext'
 import { faqs } from '../data/faqs'
 import { primaryProduct, products } from '../data/products'
 import harvestImage from '../assets/vegetable-harvest.jpg'
-import floatingSoupImage from '../assets/vyora-floating-soup.png'
+import driedVegetableSoupImage from '../assets/vyora-dried-vegetables-soup.png'
 import './Home.css'
 
 const principles = [
@@ -45,7 +45,7 @@ export default function Home() {
           </div>
         </div>
         <figure className="home-hero-food">
-          <img src={floatingSoupImage} alt="Vegetable soup cubes, fresh carrots, pumpkin, tomato and herbs floating above a warm bowl of soup" width="995" height="1200" fetchPriority="high" decoding="async"/>
+          <img src={driedVegetableSoupImage} alt="Small dried carrot, pumpkin, tomato and herb pieces falling into a warm bowl of vegetable soup" width="1142" height="1377" fetchPriority="high" decoding="async"/>
           <figcaption>
             <span>THE VYORA SOUP CUBE CONCEPT</span>
             <button type="button" className="home-hero-motion-toggle" onClick={() => setMotionPaused(paused => !paused)} aria-label={motionPaused ? 'Resume floating animation' : 'Pause floating animation'}>

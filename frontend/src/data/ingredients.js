@@ -5,7 +5,6 @@ import onionImage from '../assets/ingredients/onion.jpg'
 import carrotImage from '../assets/ingredients/carrot.jpg'
 import curryLeavesImage from '../assets/ingredients/curry-leaves.jpg'
 import pumpkinImage from '../assets/ingredients/pumpkin.jpg'
-import chickenImage from '../assets/ingredients/chicken.jpg'
 import spicesImage from '../assets/ingredients/spices.jpg'
 
 export const ingredientCategories = [
@@ -13,7 +12,6 @@ export const ingredientCategories = [
   { id: 'vegetables', label: 'Vegetables' },
   { id: 'aromatics', label: 'Herbs & aromatics' },
   { id: 'spices', label: 'Spices' },
-  { id: 'chicken', label: 'Chicken option' },
 ]
 
 export const ingredients = [
@@ -79,16 +77,6 @@ export const ingredients = [
     image: pumpkinImage,
     imageAlt: 'A whole pumpkin at a produce market',
     description: 'A mellow flavour and smooth body, being considered as part of our vegetable soup formulation.',
-  },
-  {
-    id: 'chicken',
-    name: 'Chicken',
-    category: 'chicken',
-    categoryLabel: 'CHICKEN SOUP OPTION',
-    image: chickenImage,
-    imageAlt: 'Chicken prepared as a food ingredient',
-    description: 'A savoury ingredient being explored for a separate chicken soup option, alongside our vegetable concept.',
-    note: 'Chicken option · not vegetarian',
   },
   {
     id: 'spices',
