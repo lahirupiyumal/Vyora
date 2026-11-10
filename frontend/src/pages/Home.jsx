@@ -98,7 +98,7 @@ export default function Home() {
           <Link className="home-text-link home-light-link" to={`/shop/${encodeURIComponent(selectedProduct.id)}`}>Explore {selectedProduct.variant.toLowerCase()} pack details <ArrowRight size={16}/></Link>
         </div>
         <div className="home-original-visual">
-          <div className="home-original-image"><img src={selectedProduct.image} alt="VYORA Natural Vegetable Soup Cube promotional banner" width="1942" height="809" loading="lazy"/><span className="home-original-tag"><Leaf size={14}/> THE VYORA {selectedProduct.variant.toUpperCase()}</span></div>
+          <div className="home-original-image"><img src={selectedProduct.image} alt="VYORA Vegetable Soup Kit packaging" width="1199" height="1312" loading="lazy"/><span className="home-original-tag"><Leaf size={14}/> THE VYORA {selectedProduct.variant.toUpperCase()}</span></div>
           <div className="home-original-caption"><span>CHOOSE YOUR EVERYDAY SIZE.</span><span>VYORA / {selectedProduct.variant.toUpperCase()}</span></div>
         </div>
       </div>

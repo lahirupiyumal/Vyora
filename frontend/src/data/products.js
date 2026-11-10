@@ -1,8 +1,8 @@
-import heroImage from '../assets/vyora-soup-hero.png'
+import soupKitImage from '../assets/vyora-vegetable-soup-kit.jpg'
 
 const sharedProductDetails = {
   availability: 'Prototype — future availability',
-  image: heroImage,
+  image: soupKitImage,
   ingredients: 'Ingredient candidates: carrot, pumpkin, tomato, onion, garlic, ginger, curry leaves and selected spices. Chicken is being explored for a separate chicken soup option. Final recipes are subject to formulation and testing.',
   preparation: 'Measure the mix, add the specified amount of water, stir and cook. Final quantities and cooking time will be confirmed after product testing.',
   storage: 'Final storage instructions and shelf life will be established through packaging assessment and product testing.',

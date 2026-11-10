@@ -60,7 +60,7 @@ export default function OurStory() {
         </div>
         <figure className="story-hero-visual">
           <div className="story-hero-photo">
-            <img src={primaryProduct.image} alt="VYORA Natural Vegetable Soup Cube banner with boxed product and fresh ingredients" width="1942" height="809" fetchPriority="high" />
+            <img src={primaryProduct.image} alt="VYORA Vegetable Soup Kit packaging" width="1199" height="1312" fetchPriority="high" />
             <span className="story-photo-note">Product concept</span>
           </div>
           <div className="story-origin-badge">

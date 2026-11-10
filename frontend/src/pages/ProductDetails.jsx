@@ -53,7 +53,7 @@ function ProductContent({ product }) {
     <div className="product-detail-grid">
       <figure className="product-detail-photo">
         <div className="product-detail-photo-frame">
-          <img src={product.image} alt={`${product.name} product concept`} />
+          <img src={product.image} alt="VYORA Vegetable Soup Kit packaging" width="1199" height="1312" />
           <span>PRODUCT CONCEPT</span>
         </div>
         <figcaption>Illustrative product and packaging visual.</figcaption>

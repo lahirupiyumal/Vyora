@@ -97,7 +97,7 @@
 .home-original-copy > .home-light-link { margin-top: 22px; color: #e0e8d4; font-size: 10px; }
 .home-original-visual { min-width: 0; }
 .home-original-image { position: relative; height: 510px; overflow: hidden; border: 1px solid #ffffff1c; border-radius: 8px 72px 8px 8px; background: #e3d6be; box-shadow: 0 26px 65px #071b1238; }
-.home-original-image > img { width: 100%; height: 100%; object-fit: cover; object-position: 83% center; }
+.home-original-image > img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .home-original-tag { position: absolute; top: 23px; left: 23px; display: flex; align-items: center; gap: 7px; border: 1px solid #f4eddf; border-radius: 3px; background: #faf6eade; padding: 8px 11px; color: #4d623d; font-size: 8px; font-weight: 600; letter-spacing: .1em; }
 .home-original-caption { margin-top: 16px; color: #b5c5aa; font-size: 7px; }
 
