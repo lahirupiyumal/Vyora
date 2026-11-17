@@ -16,8 +16,8 @@ export const products = [
     name: 'VYORA Original Vegetable Soup Mix',
     shortName: 'VYORA Original',
     description: 'The balanced everyday VYORA soup mix concept, designed for convenient, warm and wholesome-tasting bowls at home.',
-    price: 850,
-    weight: '100 g prototype pack',
+    price: 380,
+    weight: '60 g prototype pack',
   },
   {
     ...sharedProductDetails,
@@ -26,18 +26,8 @@ export const products = [
     name: 'VYORA Large Vegetable Soup Mix',
     shortName: 'VYORA Large',
     description: 'A larger VYORA soup mix concept for families, shared meals and anyone who likes to keep more comforting bowls ready.',
-    price: 1550,
+    price: 1440,
     weight: '200 g prototype pack',
-  },
-  {
-    ...sharedProductDetails,
-    id: 'vyora-mini',
-    variant: 'Mini',
-    name: 'VYORA Mini Vegetable Soup Mix',
-    shortName: 'VYORA Mini',
-    description: 'A compact VYORA soup mix concept made for smaller servings, trial purchases and convenient everyday carrying.',
-    price: 475,
-    weight: '50 g prototype pack',
   },
 ]
 

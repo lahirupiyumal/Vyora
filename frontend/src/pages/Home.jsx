@@ -81,9 +81,9 @@ export default function Home() {
       <div className="site-container home-original-grid">
         <div className="home-original-copy">
           <span className="home-kicker home-kicker-light"><span className="home-kicker-line"/> FIND YOUR EVERYDAY SIZE</span>
-          <h2 id="original-title">Three sizes.<br/><em>One comforting idea.</em></h2>
+          <h2 id="original-title">Two sizes.<br/><em>One comforting idea.</em></h2>
           <p>From a first taste to a family pantry pack, choose the VYORA size that fits the way you live.</p>
-          <ul className="home-product-features"><li><Check size={16}/> Original, Large and Mini concepts</li><li><Check size={16}/> Designed to simplify everyday preparation</li><li><Check size={16}/> Inspired by Sri Lankan ingredients and routines</li></ul>
+          <ul className="home-product-features"><li><Check size={16}/> Original and Large concepts</li><li><Check size={16}/> Designed to simplify everyday preparation</li><li><Check size={16}/> Inspired by Sri Lankan ingredients and routines</li></ul>
           <div className="home-variant-options" role="group" aria-label="Choose a VYORA pack size">
             {products.map(product => <button key={product.id} type="button" className={`home-variant-option${selectedProduct.id === product.id ? ' is-active' : ''}`} onClick={() => selectProduct(product.id)} aria-pressed={selectedProduct.id === product.id}>
               <strong>{product.variant}</strong><span>{product.weight.replace(' prototype pack', '')}</span>
